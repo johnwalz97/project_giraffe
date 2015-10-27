@@ -36,6 +36,15 @@ class Admins extends CI_Controller {
             $this->load->view('admin_login');
         } 
     }
+    public function orders(){
+        if($this->session->userdata('logged_in')==true){
+            $products = $this->admin->get_all_products();
+            $this->load->view('products', ['products' => $products]);
+        }
+        else {
+            $this->load->view('admin_login');
+        } 
+    }
     public function add_product(){
         if($this->session->userdata('logged_in')==true){
             $this->load->view('add_product');

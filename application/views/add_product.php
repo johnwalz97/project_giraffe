@@ -5,7 +5,7 @@ $this->load->view('partials/foot');
 ?>
 <div class="container">
     <h1>Add Product</h1>
-    <div class="container">
+    <div class="container col-md-">
         <form action="/admins/create" method="post">
             <input type="text" name="name">
             <textarea name="description"></textarea>
