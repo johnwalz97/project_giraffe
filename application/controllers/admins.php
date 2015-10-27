@@ -53,4 +53,22 @@ class Admins extends CI_Controller {
             $this->load->view('admin_login');
         } 
     }
+	public function create(){
+		$description = $this->input->post('description');
+		$name = $this->input->post('name');
+		$price = $this->input->post('price');
+		$this->admin->create_product($description, $name, $price);
+		redirect("/admins/products");
+	}
+	public function edit($id){
+		$product = $this->admin->get_product_by_id($id);
+		$this->load->view('edit_product', ['product' => $product]);
+	}
+	public function update($id){
+		$description = $this->input->post('description');
+		$name = $this->input->post('name');
+		$price = $this->input->post('price');
+		$this->admin->update_product($description, $name, $price, $id);
+		redirect("/admins/products");
+	}
 }
