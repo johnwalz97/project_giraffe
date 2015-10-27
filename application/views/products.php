@@ -4,6 +4,7 @@ $this->load->view('partials/nav');
 $this->load->view('partials/foot');
 ?>
 <div class="container">
+    <a href="/admins/add_product" class="btn btn-primary">Add New Product</a>
     <table class="table">
         <th>Picture</th>
         <th>ID</th>
@@ -13,9 +14,11 @@ $this->load->view('partials/foot');
         <th>Quantity Sold</th>
         <th>Actions</th>
         <?php
-        foreach($products as $product){ ?>
+        $i = 0;
+        foreach($products as $product){
+            $i++ ?>
             <tr>
-                <td><img width="50px" height="50px" src="/assets/pics/img (<?=$product['id']?>).jpg"></td>
+                <td><img width="50px" height="50px" src="/assets/pics/img (<?=$i?>).jpg"></td>
                 <td><?=$product['id']?></td>
                 <td><?=$product['name']?></td>
                 <td><?=$product['description']?></td>

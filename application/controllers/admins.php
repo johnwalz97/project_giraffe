@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+//dont touch my controller
 class Admins extends CI_Controller {
 	public function index(){
         if($this->session->userdata('logged_in')==true){
@@ -31,6 +31,14 @@ class Admins extends CI_Controller {
         if($this->session->userdata('logged_in')==true){
             $products = $this->admin->get_all_products();
             $this->load->view('products', ['products' => $products]);
+        }
+        else {
+            $this->load->view('admin_login');
+        } 
+    }
+    public function add_product(){
+        if($this->session->userdata('logged_in')==true){
+            $this->load->view('add_product');
         }
         else {
             $this->load->view('admin_login');
