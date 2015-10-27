@@ -8,7 +8,7 @@
 			<li><a href="/admins/products">Products</a></li>
         </ul>
         <ul class="nav navbar-nav pull-right">
-            <li class="pull-right"><a href="/admins/">Log Off</a></li>
+            <li class="pull-right"><a href="/admins/logoff">Log Off</a></li>
         </ul>
     </div>
 </nav>
