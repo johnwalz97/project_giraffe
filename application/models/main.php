@@ -8,4 +8,10 @@ class Main extends CI_Model {
 	{
 		
 	}
+
+	public function getAllProducts(){
+		$query = "SELECT * FROM products";
+		$products = $this->db->query($query)->result_array();
+		return $products;
+	}
 }

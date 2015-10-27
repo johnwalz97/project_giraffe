@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/assets/bootstrap.css">
-  <title>Store View</title>
+  <title>Storefront</title>
 </head>
 <body>
   <h2>PHP CATEGORY NAME PHP - PAGE NUMBER</h2>
 
-  <img width="50px" height="50px" src="/assets/pics/img (<?=$i?>).jpg">
-
-<!-- PAGINATION -->
+  <?php foreach($products as $product){ ?>
+    <img width="50px" height="50px" src="/assets/pics/img (<?=$i?>).jpg">
+    <?= } ?>
+<!-- FOOTER PAGINATION -->
   <nav>
     <ul class="pagination">
       <li>
