@@ -3,7 +3,7 @@ $this->load->view('partials/head', ['title' => 'Admin Dashboard']);
 $this->load->view('partials/nav');
 $this->load->view('partials/foot');
 ?>
-<div class="container">
+<a href="/admins/orders"><div class="container">
     <table class="table">
         <?php
         foreach($orders as $order){ ?>
@@ -25,4 +25,4 @@ $this->load->view('partials/foot');
             </tr>
     <?php } ?>
     </table>
-</div>
+</div></a>
