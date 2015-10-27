@@ -21,7 +21,7 @@ $this->load->view('partials/foot');
                 <td><img width="50px" height="50px" src="/assets/pics/img (<?=$i?>).jpg"></td>
                 <td><?=$product['id']?></td>
                 <td><?=$product['name']?></td>
-                <td><?=$product['description']?></td>
+                <td style="overflow: scroll; height: 100px; max-width: 200px;"><?=$product['description']?></td>
                 <td>100</td>
                 <td>0</td>
                 <td><a href="/admins/edit/<?=$product['id']?>">Edit</a> | <a href="/admins/delete/<?=$product['id']?>">Delete</a></td>

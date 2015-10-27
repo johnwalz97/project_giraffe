@@ -7,20 +7,20 @@ $this->load->view('partials/foot');
     <h1>Add Product</h1>
     <div class="container col-md-">
         <form action="/admins/create" method="post">
-            <input type="text" name="name">
-            <textarea name="description"></textarea>
-            <select name="category">
+            <p><label>Name:</label><input type="text" name="name"></p>
+            <p><label>Price:</label><input type="number" name="price"></p>
+            <p><label>Description:</label><textarea name="description"></textarea></p>
+            <p><label>Category</label><select name="category">
                 <?php
                 foreach($categories as $category){
                     echo "<option value='$category'></option>";
                 }
                 ?>
-            </select>
-            <input type="text" name="new_category">
-            <input type="image" name="image">
-            <button id="cancel" class="btn btn-default">Cancel</button>
-            <button id="preview" class="btn btn-success">Preview</button>
-            <input type="submit" value="Update" class="btn btn-primary">
+            </select></p>
+            <p><label>Or Create a New Category</label><input type="text" name="new_category"></p>
+            <p><a id="cancel" class="btn btn-default" href="/admins/products">Cancel</a>
+            <a id="preview" class="btn btn-success" href="/admins/preview">Preview</a>
+            <input type="submit" value="Add Product" class="btn btn-primary"></p>
         </form>
     </div>
 </div>
