@@ -22,7 +22,7 @@
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, deleniti asperiores doloribus atque ea mollitia explicabo consectetur veniam, libero ex error. Autem adipisci, reiciendis quod dolores excepturi illum voluptatibus laborum!</p>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa alias error modi iusto laboriosam officiis necessitatibus distinctio a minima! Quia non natus commodi iure accusamus aliquid, earum molestias quisquam recusandae.</p>
 	
-	<!-- QUANTITY PRICE DROPDOWN -->
+	<!-- QUANTITY DROPDOWN -->
 	<form action="" method="post">
 		<select name="">
 			<option value="">---</option>

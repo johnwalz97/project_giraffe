@@ -6,6 +6,7 @@
 	<title>Shopping Cart</title>
 </head>
 <body>
+
 <!-- SHOPPING CART TABLE -->
 	<div class="container">           
   		<table class="table table-bordered">
@@ -28,7 +29,6 @@
   		</table>
   		<p>Total: $PHP</p>
   		<button type="button" class="btn btn-success"><a href="#">Continue Shopping</a></button>
-
 	</div>
 
 <!-- SHIPPING INFO BEGIN -->
@@ -143,9 +143,5 @@
 		    </div>	    
 		</div>
 	</form>
-
-
-
-
 </body>
 </html>

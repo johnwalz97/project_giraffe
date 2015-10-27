@@ -2,16 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mains extends CI_Controller {
-
-
-	public function index(){
-		$products = $this->main->getAllProducts();
-		$this->load->view('storefront');
+	public function index()
+	{
+		$this->load->view('main_view');
 	}
 
 	public function oneProduct($id){
-		$product = $this->main->getOneProduct($id);
-		$this->load->view('single_product');
+		$oneProduct = $this->main->getOneProduct($id);
+		$products = $this->main->getProductsInCategory($id);
+		$this->load->view('single_product', $oneProduct, $products);
 	}
 
 	public function productsInCategory($id){
@@ -23,8 +22,5 @@ class Mains extends CI_Controller {
 	public function view_cart(){
 		$this->load->view('cart');
 	}
-
-
-
 
 }

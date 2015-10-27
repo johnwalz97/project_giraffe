@@ -16,9 +16,10 @@ class Main extends CI_Model {
 	}
 
 	public function getOneProduct($id){
-		$query = "SELECT * FROM products";
-		$products = $this->db->query($query)->result_array();
-		return $products;
+		$query = "SELECT * FROM products WHERE products.id = ?";
+		$values = array($id);
+		$oneProduct = $this->db->query($query)->row_array();
+		return $oneProduct;
 	}
 
 	public function getOneCategory($id){
