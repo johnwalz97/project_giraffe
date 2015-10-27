@@ -6,6 +6,7 @@
 	<title>Shopping Cart</title>
 </head>
 <body>
+
 <!-- SHOPPING CART TABLE -->
 	<div class="container">           
   		<table class="table table-bordered">
@@ -17,18 +18,17 @@
         			<th>Total</th>
       			</tr>
     		</thead>
-    		<tbody>
-      			<tr>
-       				<td>PHP ITEM</td>
-        			<td>PHP PRICE</td>
-        			<td>PHP QUANTITY</td>
-        			<td>PHP TOTAL</td>
-      			</tr>
-    		</tbody>
+    		<?php "<tbody>" ?>
+      			<?php"<tr>" ?>
+       				<?= "<td>" . $product['name'] . "</td>"?>
+        			<?= "<td>" . $product['price'] . "</td>"?>
+        			<?= "<td>" . "QTY" . "</td>"?>
+        			<?= "<td>" . "TOTAL" . "</td>"?>
+      			<?php"</tr>" ?>
+    		<?php "</tbody>" ?>
   		</table>
   		<p>Total: $PHP</p>
   		<button type="button" class="btn btn-success"><a href="#">Continue Shopping</a></button>
-
 	</div>
 
 <!-- SHIPPING INFO BEGIN -->
@@ -143,9 +143,5 @@
 		    </div>	    
 		</div>
 	</form>
-
-
-
-
 </body>
 </html>
