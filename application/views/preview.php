@@ -6,7 +6,7 @@ $this->load->view('partials/foot');
 <div class="container">
     <h1>Preview Product <?=$product['id']?> - <?=$product['name']?></h1>
     <div class="row">
-        <img src="/assets/pics/img (<?=$product['id']?>).jpg" class="col-md-6">
+        <img src="/assets/pics/img (<?=$product['picture_link']?>).jpg" class="col-md-6">
         <div class="container col-md-6">
             <label>Name:</label><p><?=$product['name']?></p>
             <label>Price:</label><p>$<?=$product['price']?></p>

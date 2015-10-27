@@ -11,9 +11,10 @@ class Admin extends CI_Model {
 		return ($this->db->query($query)->result_array());
 	}
 	public function create_product($description, $name, $price){
-		$query = "INSERT INTO products (description, name, price, created_at, updated_at, views) VALUES (?, ?, ?, NOW(), NOW(), 0)";
+		$query = "INSERT INTO products (description, name, price, created_at, updated_at, views, qty_ordered) VALUES (?, ?, ?, NOW(), NOW(), 0, 0)";
 		$values = [$description, $name, $price];
 		$this->db->query($query, $values);
+		return($this->db->insert_id());
 	}
 	public function get_product_by_id($id){
 		$query = "SELECT * FROM products WHERE id = ?";

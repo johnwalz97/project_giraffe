@@ -6,7 +6,7 @@ $this->load->view('partials/foot');
 <div class="container">
     <h1>Edit Product - ID <?=$product['id']?></h1>
     <div class="row">
-        <img src="/assets/pics/img (<?=$product['id']?>).jpg" class="col-md-6">
+        <img src="/assets/pics/img (<?=$product['picture_link']?>).jpg" class="col-md-6">
         <div class="container col-md-6">
             <form id="update" action="/admins/update/<?=$product['id']?>" method="post">
                 <p><label>Name:</label><input type="text" name="name" value="<?=$product['name']?>"></p>

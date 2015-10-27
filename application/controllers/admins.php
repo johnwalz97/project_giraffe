@@ -72,7 +72,6 @@ class Admins extends CI_Controller {
 				$this->admin->update_product($description, $name, $price, $id);
 				$product = $this->admin->get_product_by_id($id);
 				$this->load->view('preview', ['product' => $product]);
-				
 			}
 			else {
 				$product = $this->admin->get_product_by_id($id);
@@ -90,5 +89,13 @@ class Admins extends CI_Controller {
 	public function logoff(){
 		$this->session->sess_destroy();
 		redirect("/admins/");
+	}
+	public function create_preview(){
+		$description = $this->input->post('description');
+		$name = $this->input->post('name');
+		$price = $this->input->post('price');
+		$id = $this->admin->create_product($description, $name, $price);
+		$product = $this->admin->get_product_by_id($id);
+		$this->load->view('preview', ['product' => $product]);
 	}
 }

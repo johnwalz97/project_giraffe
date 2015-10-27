@@ -19,7 +19,7 @@ $this->load->view('partials/foot');
             </select></p>
             <p><label>Or Create a New Category</label><input type="text" name="new_category"></p>
             <p><a id="cancel" class="btn btn-default" href="/admins/products">Cancel</a>
-            <button id="preview" class="btn btn-success">Preview</button>
+            <input type="submit" id="preview" formaction="/admins/create_preview" class="btn btn-success" value="Preview">
             <input type="submit" value="Add Product" class="btn btn-primary"></p>
         </form>
     </div>

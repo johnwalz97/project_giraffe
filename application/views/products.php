@@ -16,12 +16,12 @@ $this->load->view('partials/foot');
         <?php
         foreach($products as $product){ ?>
             <tr>
-                <td><img width="50px" height="50px" src="/assets/pics/img (<?=$product['id']?>).jpg"></td>
+                <td><img width="50px" height="50px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg"></td>
                 <td><a href="/admins/preview/<?=$product['id']?>"><?=$product['id']?></a></td>
                 <td><a href="/admins/preview/<?=$product['id']?>"><?=$product['name']?></a></td>
                 <td><div style="overflow-y: scroll; max-height: 100px; max-width: 200px;"><?=$product['description']?></div></td>
-                <td>100</td>
                 <td>0</td>
+                <td><?=$product['qty_ordered']?></td>
                 <td><a href="/admins/edit/<?=$product['id']?>">Edit</a> | <a href="/admins/delete/<?=$product['id']?>">Delete</a></td>
             </tr>
     <?php } ?>
