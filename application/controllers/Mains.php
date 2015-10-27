@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Mains extends CI_Controller {
 
 
-	public function index()
-	{
-		$this->load->view('cart_view');
+	public function index(){
+		$this->load->view('');
+		var_dump($this->db->query('SELECT * FROM products')->result_array());
 	}
 }
