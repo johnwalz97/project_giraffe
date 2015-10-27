@@ -14,4 +14,24 @@ class Main extends CI_Model {
 		$products = $this->db->query($query)->result_array();
 		return $products;
 	}
+
+	public function getOneProduct($id){
+		$query = "SELECT * FROM products";
+		$products = $this->db->query($query)->result_array();
+		return $products;
+	}
+
+	public function getOneCategory($id){
+		$query = "SELECT name FROM categories WHERE categories.id = ?";
+		$values = array($id);
+		$category = $this->db->query($query, $values)->row_array();
+		return $category;
+	}
+
+	public function getProductsInCategory($id){
+		$query = "SELECT * FROM products JOIN categorization ON product_id = products.id JOIN categorization ON categories where categores.id = category_id WHERE categories.id = ?";
+		$values = array($id);
+		$products = $this->db->query($query, $values)->result_array();
+		return $products;
+	}
 }
