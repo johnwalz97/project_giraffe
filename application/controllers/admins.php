@@ -21,22 +21,14 @@ class Admins extends CI_Controller {
     }
     public function dashboard(){
         if($this->session->userdata('logged_in')==true){
-            $this->load->view('dashboard');
+			$orders = $this->admin->get_all_orders();
+            $this->load->view('dashboard', ['orders' => $orders]);
         }
         else {
             $this->load->view('admin_login');
         }
     }
     public function products(){
-        if($this->session->userdata('logged_in')==true){
-            $products = $this->admin->get_all_products();
-            $this->load->view('products', ['products' => $products]);
-        }
-        else {
-            $this->load->view('admin_login');
-        } 
-    }
-    public function orders(){
         if($this->session->userdata('logged_in')==true){
             $products = $this->admin->get_all_products();
             $this->load->view('products', ['products' => $products]);
@@ -69,6 +61,26 @@ class Admins extends CI_Controller {
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
 		$this->admin->update_product($description, $name, $price, $id);
+		redirect("/admins/products");
+	}
+	public function preview($id){
+		if($this->input->post('name')&&$this->input->post('description')&&$this->input->post('price')){
+			$description = $this->input->post('description');
+			$name = $this->input->post('name');
+			$price = $this->input->post('price');
+			$this->admin->update_product($description, $name, $price, $id);
+			$product = $this->admin->get_product_by_id($id);
+			$this->load->view('preview', ['product' => $product]);
+			
+		}
+		else {
+			$product = $this->admin->get_product_by_id($id);
+			$this->load->view('preview', ['product' => $product]);
+		}
+		
+	}
+	public function delete($id){
+		$this->admin->delete($id);
 		redirect("/admins/products");
 	}
 }

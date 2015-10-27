@@ -14,14 +14,12 @@ $this->load->view('partials/foot');
         <th>Quantity Sold</th>
         <th>Actions</th>
         <?php
-        $i = 0;
-        foreach($products as $product){
-            $i++ ?>
+        foreach($products as $product){ ?>
             <tr>
-                <td><img width="50px" height="50px" src="/assets/pics/img (<?=$i?>).jpg"></td>
-                <td><?=$product['id']?></td>
-                <td><?=$product['name']?></td>
-                <td style="overflow: scroll; height: 100px; max-width: 200px;"><?=$product['description']?></td>
+                <td><img width="50px" height="50px" src="/assets/pics/img (<?=$product['id']?>).jpg"></td>
+                <td><a href="/admins/preview/<?=$product['id']?>"><?=$product['id']?></a></td>
+                <td><a href="/admins/preview/<?=$product['id']?>"><?=$product['name']?></a></td>
+                <td><div style="overflow-y: scroll; max-height: 100px; max-width: 200px;"><?=$product['description']?></div></td>
                 <td>100</td>
                 <td>0</td>
                 <td><a href="/admins/edit/<?=$product['id']?>">Edit</a> | <a href="/admins/delete/<?=$product['id']?>">Delete</a></td>

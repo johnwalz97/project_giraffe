@@ -24,4 +24,8 @@ class Admin extends CI_Model {
 		$values = [$description, $name, $price, $id];
 		$this->db->query($query, $values);
 	}
+	public function delete($id){
+		$query = "DELETE FROM products WHERE id = ?";
+		$this->db->query($query, $id);
+	}
 }
