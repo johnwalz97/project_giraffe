@@ -7,13 +7,13 @@ $this->load->view('partials/foot');
     <h1>Add Product</h1>
     <div class="container col-md-">
         <form action="/admins/create" method="post">
-            <p><label>Name:</label><input type="text" name="name" required></p>
-            <p><label>Price:</label><input type="number" name="price" required></p>
-            <p><label>Description:</label><textarea required name="description"></textarea></p>
-            <p><label>Category</label><select name="category">
+            <p><label>Name: </label><input type="text" name="name" required></p>
+            <p><label>Price: </label><input type="number" name="price" required></p>
+            <p><label>Description: </label></p><p><textarea style="width: 400px; height: 100px;" required name="description"></textarea></p>
+            <p><label>Category: </label><select name="category">
                 <?php
                 foreach($categories as $category){
-                    echo "<option value='$category'></option>";
+                    echo "<option value='".$category['name']."'>".$category['name']."</option>";
                 }
                 ?>
             </select></p>

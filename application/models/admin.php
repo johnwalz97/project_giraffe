@@ -29,4 +29,8 @@ class Admin extends CI_Model {
 		$query = "DELETE FROM products WHERE id = ?";
 		$this->db->query($query, $id);
 	}
+	public function get_all_categories(){
+		$query ="SELECT * FROM categories";
+		return $this->db->query($query)->result_array();
+	}
 }

@@ -31,7 +31,8 @@ class Admins extends CI_Controller {
     public function products(){
         if($this->session->userdata('logged_in')==true){
             $products = $this->admin->get_all_products();
-            $this->load->view('products', ['products' => $products]);
+			$categories = $this->admin->get_all_categories();
+            $this->load->view('products', ['products' => $products, 'categories' => $categories]);
         }
         else {
             $this->load->view('admin_login');
@@ -39,7 +40,8 @@ class Admins extends CI_Controller {
     }
     public function add_product(){
         if($this->session->userdata('logged_in')==true){
-            $this->load->view('add_product');
+			$categories = $this->admin->get_all_categories();
+            $this->load->view('add_product', ['categories' => $categories]);
         }
         else {
             $this->load->view('admin_login');
@@ -54,7 +56,8 @@ class Admins extends CI_Controller {
 	}
 	public function edit($id){
 		$product = $this->admin->get_product_by_id($id);
-		$this->load->view('edit_product', ['product' => $product]);
+		$categories = $this->admin->get_all_categories();
+		$this->load->view('edit_product', ['product' => $product, 'categories' => $categories]);
 	}
 	public function update($id){
 		$description = $this->input->post('description');
@@ -71,7 +74,8 @@ class Admins extends CI_Controller {
 				$price = $this->input->post('price');
 				$this->admin->update_product($description, $name, $price, $id);
 				$product = $this->admin->get_product_by_id($id);
-				$this->load->view('preview', ['product' => $product]);
+				$categories = $this->admin->get_all_categories();
+				$this->load->view('preview', ['product' => $product, 'categories' => $categories]);
 			}
 			else {
 				$product = $this->admin->get_product_by_id($id);
