@@ -1,4 +1,87 @@
 * {
     padding: 0px;
     margin: 0px;
+    border-radius: 0px !important;
+}
+body {
+    padding-bottom: 50px;
+}
+.list_link {
+    color: white !important;
+}
+.sign_in {
+    background: #2B2B2B !important;
+}
+.login {
+    background: url("/assets/dark-cubes.jpg");
+}
+.input-group-addon {
+    background: url("/assets/bg-body.png");
+}
+#add_product {
+    position: fixed;
+    left: -50px;
+    top: 200px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.products {
+    border: solid thin black;
+}
+#edit {
+    padding: 20px;
+    background: white;
+    position: fixed;
+    top: 50px;
+    width: 600px;
+    margin-left: -300px;
+    left: 50%;
+    z-index: 100;
+}
+#overlay {
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #2B2B2B;
+    opacity: .9;
+    z-index: 99;
+}
+#picture {
+    cursor: pointer;
+}
+#pictures {
+    position: fixed;
+    text-align: center;
+    top: 50px;
+    background: white;
+    width: 900px;
+    margin-left: -450px;
+    height: 80%;
+    overflow-y: scroll;
+    left: 50%;
+    padding: 10px;
+    padding-left: 30px;
+    z-index: 100;
+}
+.picture {
+    float: left;
+    cursor: pointer;
+    margin: 10px;
+    display: inline-block;
+}
+.picture:hover {
+    opacity: .5;
+}
+.fixed_title {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 1px;
+    color: white;
+    z-index: 100;
 }

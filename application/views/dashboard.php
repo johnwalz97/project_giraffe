@@ -3,9 +3,12 @@ $this->load->view('partials/head', ['title' => 'Admin Dashboard']);
 $this->load->view('partials/nav');
 $this->load->view('partials/foot');
 ?>
-<a href="/admins/orders"><div class="container">
+<div class="container">
     <table class="table">
         <?php
+        if(empty($orders)){
+            echo "<h3>No Orders!</h3>";
+        }
         foreach($orders as $order){ ?>
             <tr>
                 <td><?=$order['id']?></td>
@@ -25,4 +28,4 @@ $this->load->view('partials/foot');
             </tr>
     <?php } ?>
     </table>
-</div></a>
+</div>
