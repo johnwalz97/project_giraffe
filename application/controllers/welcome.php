@@ -29,7 +29,7 @@ class Welcome extends CI_Controller {
 		else{
 			$user = $this->user->register_user($this->input->post('email'), $this->input->post('first_name'), $this->input->post('last_name'), $this->input->post('password'));
 			$this->session->set_userdata('user', $user);
-			redirect("/users/");			
+			redirect("/mains/");			
 		}
 	}
 	
@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
 		$login = $this->user->login_user($this->input->post('email'), $password);
 		if (!empty($login)){
 			$this->session->set_userdata('user', $login);
-			redirect("/users/");
+			redirect("/mains/");
 		}
 		else {
 			$this->session->set_flashdata('errors', 'The login information you provided is incorrect');
