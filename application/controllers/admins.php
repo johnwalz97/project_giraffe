@@ -51,7 +51,8 @@ class Admins extends CI_Controller {
 		$description = $this->input->post('description');
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
-		$this->admin->create_product($description, $name, $price);
+		$category = $this->input->post('category');
+		$this->admin->create_product($description, $name, $price, $category);
 		redirect("/admins/products");
 	}
 	public function edit($id){
@@ -63,7 +64,8 @@ class Admins extends CI_Controller {
 		$description = $this->input->post('description');
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
-		$this->admin->update_product($description, $name, $price, $id);
+		$category = $this->input->post('category');
+		$this->admin->update_product($description, $name, $price, $id, $category);
 		redirect("/admins/products");
 	}
 	public function preview($id){
@@ -72,14 +74,16 @@ class Admins extends CI_Controller {
 				$description = $this->input->post('description');
 				$name = $this->input->post('name');
 				$price = $this->input->post('price');
-				$this->admin->update_product($description, $name, $price, $id);
+				$category = $this->input->post('category');
+				$this->admin->update_product($description, $name, $price, $id, $category);
 				$product = $this->admin->get_product_by_id($id);
 				$categories = $this->admin->get_all_categories();
 				$this->load->view('preview', ['product' => $product, 'categories' => $categories]);
 			}
 			else {
 				$product = $this->admin->get_product_by_id($id);
-				$this->load->view('preview', ['product' => $product]);
+				$categories = $this->admin->get_all_categories();
+				$this->load->view('preview', ['product' => $product, 'categories' => $categories]);
 			}
 		}
 		else {
@@ -98,7 +102,8 @@ class Admins extends CI_Controller {
 		$description = $this->input->post('description');
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
-		$id = $this->admin->create_product($description, $name, $price);
+		$category = $this->input->post('category');
+		$id = $this->admin->create_product($description, $name, $price, $category);
 		$product = $this->admin->get_product_by_id($id);
 		$this->load->view('preview', ['product' => $product]);
 	}

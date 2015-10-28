@@ -15,11 +15,15 @@ $this->load->view('partials/foot');
                 <p><label>Category</label><select name="category">
                     <?php
                     foreach($categories as $category){
-                        echo "<option value='$category'></option>";
+                        if ($category['name'] == $product['category_name']){
+                            echo "<option selected value='".$category['id']."'>".$category['name']."</option>";
+                        }
+                        else {
+                            echo "<option value='".$category['id']."'>".$category['name']."</option>";
+                        }
                     }
                     ?>
                 </select></p>
-                <p><label>Or Create a New Category</label><input type="text" name="new_category"></p>
                 <a href="/admins/products" id="cancel" class="btn btn-default">Cancel</a>
                 <input type="submit" formaction="/admins/preview/<?=$product['id']?>" id="preview" class="btn btn-success" value="Preview">
                 <input type="submit" value="Update" class="btn btn-primary">

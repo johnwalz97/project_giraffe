@@ -11,7 +11,8 @@ $this->load->view('partials/foot');
             <label>Name:</label><p><?=$product['name']?></p>
             <label>Price:</label><p>$<?=$product['price']?></p>
             <label>Description</label><div><?=$product['description']?></div>
-            <a onclick="$('#edit, #overlay').show()" id="cancel" class="btn btn-warning">Edit</a>
+            <label>Category:</label><p><?=$product['category_name']?></p>
+            <a onclick="$('#edit, #overlay').slideDown()" id="cancel" class="btn btn-warning">Edit</a>
             <a href="/admins/products" id="preview" class="btn btn-success">All Products</a>
         </div>
     </div>
@@ -28,12 +29,16 @@ $this->load->view('partials/foot');
                 <p><label>Category</label><select name="category">
                     <?php
                     foreach($categories as $category){
-                        echo "<option value='".$category['name']."'></option>";
+                        if ($category['name'] == $product['category_name']){
+                            echo "<option selected value='".$category['id']."'>".$category['name']."</option>";
+                        }
+                        else {
+                            echo "<option value='".$category['id']."'>".$category['name']."</option>";
+                        }
                     }
                     ?>
                 </select></p>
-                <p><label>Or Create a New Category</label><input type="text" name="new_category"></p>
-                <a href="/admins/products" id="cancel" class="btn btn-default">Cancel</a>
+                <a onclick="$('#edit, #overlay').slideUp()" id="cancel" class="btn btn-warning">Cancel</a>
                 <input type="submit" formaction="/admins/preview/<?=$product['id']?>" id="preview" class="btn btn-success" value="Preview">
                 <input type="submit" value="Update" class="btn btn-primary">
             </form>
@@ -44,4 +49,4 @@ $this->load->view('partials/foot');
         </div>
     </div>
 </div>
-<div id='overlay' style="display: none"></div>
+<div id='overlay' style="display: none" onclick="$('#edit, #overlay').slideUp()"></div>
