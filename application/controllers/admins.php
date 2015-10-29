@@ -52,7 +52,8 @@ class Admins extends CI_Controller {
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
 		$category = $this->input->post('category');
-		$this->admin->create_product($description, $name, $price, $category);
+		$pic = $this->input->post('picture_link');
+		$this->admin->create_product($description, $name, $price, $category, $pic);
 		redirect("/admins/products");
 	}
 	public function edit($id){
@@ -65,7 +66,8 @@ class Admins extends CI_Controller {
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
 		$category = $this->input->post('category');
-		$this->admin->update_product($description, $name, $price, $id, $category);
+		$pic = $this->input->post('picture_link');
+		$this->admin->update_product($description, $name, $price, $id, $category, $pic);
 		redirect("/admins/products");
 	}
 	public function preview($id){
@@ -75,7 +77,8 @@ class Admins extends CI_Controller {
 				$name = $this->input->post('name');
 				$price = $this->input->post('price');
 				$category = $this->input->post('category');
-				$this->admin->update_product($description, $name, $price, $id, $category);
+				$pic = $this->input->post('picture_link');
+				$this->admin->update_product($description, $name, $price, $id, $category, $pic);
 				$product = $this->admin->get_product_by_id($id);
 				$categories = $this->admin->get_all_categories();
 				$this->load->view('preview', ['product' => $product, 'categories' => $categories]);
@@ -103,7 +106,8 @@ class Admins extends CI_Controller {
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
 		$category = $this->input->post('category');
-		$id = $this->admin->create_product($description, $name, $price, $category);
+		$pic = $this->input->post('picture_link');
+		$id = $this->admin->create_product($description, $name, $price, $category, $pic);
 		$product = $this->admin->get_product_by_id($id);
 		$this->load->view('preview', ['product' => $product]);
 	}

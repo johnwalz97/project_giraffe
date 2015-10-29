@@ -1,11 +1,12 @@
 <?php
 $this->load->view('partials/customers', ['title' => 'Checkout']);
+var_dump($this->cart->contents());
 ?>
 <!-- //////////////////////////////////////////////////////////////////////////// -->
 <!-- SHIPPING INFO BEGIN -->
 <div class="container">
   	<h2>Shipping Information</h2>
-  	<form action="/mains/" method="post" class="form-horizontal" role="form">
+  	<form action="/shopping/checkout" method="post" class="form-horizontal" role="form">
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">First Name:</label>
 	      	<div class="col-sm-3">

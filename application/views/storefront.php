@@ -130,11 +130,11 @@ $(document).ready(function(){
       <div class="container col-md-2">
            <div class="btn-group-vertical">
               <h5><b>View by Category:</b></h5>
-              <a href="/mains/productsInCategory" class="btn btn-primary" role="button">Sport</a>
-              <a href="/mains/productsInCategory" class="btn btn-primary" role="button">Dirt Bike</a>
-              <a href="/mains/productsInCategory" class="btn btn-primary" role="button">Cross Country</a>
-              <a href="/mains/productsInCategory" class="btn btn-primary" role="button">Electric</a>
-              <a href="/mains/productsInCategory" class="btn btn-primary" role="button">Cruiser</a>
+              <a href="/mains/productsInCategory/1" class="btn btn-primary" role="button">Sport</a>
+              <a href="/mains/productsInCategory/2" class="btn btn-primary" role="button">Dirt Bike</a>
+              <a href="/mains/productsInCategory/3" class="btn btn-primary" role="button">Cross Country</a>
+              <a href="/mains/productsInCategory/4" class="btn btn-primary" role="button">Electric</a>
+              <a href="/mains/productsInCategory/5" class="btn btn-primary" role="button">Cruiser</a>
            </div>  
       </div>
       <div class="col-md-10">

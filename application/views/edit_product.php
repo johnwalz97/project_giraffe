@@ -24,6 +24,8 @@ $this->load->view('partials/foot');
                     }
                     ?>
                 </select></p>
+                <p><a id="picture" onclick="$('#pictures, #overlay').slideDown()">Choose Picture</a></p>
+                <input id="pic" type="hidden" name="picture_link" value="">
                 <a href="/admins/products" id="cancel" class="btn btn-default">Cancel</a>
                 <input type="submit" formaction="/admins/preview/<?=$product['id']?>" id="preview" class="btn btn-success" value="Preview">
                 <input type="submit" value="Update" class="btn btn-primary">
@@ -31,3 +33,17 @@ $this->load->view('partials/foot');
         </div>
     </div>
 </div>
+<div id="pictures" style="display: none">
+    <?php
+    for($i=1; $i<=29; $i++){ ?>
+        <img class="picture" src="/assets/pics/img (<?=$i?>).jpg" id="<?=$i?>" width="100px" height="100px;">
+    <?php } ?>
+</div>
+<div id='overlay' style="display: none" onclick="$('#pictures, #overlay').slideUp();"><h3 class="fixed_title">Choose a picture</h3></div>
+<script>
+    $('.picture').click(function(){
+        var value = $(this).attr('id');
+        $('#pic').attr('value', value);
+        $('#pictures, #overlay').slideUp();
+    })
+</script>

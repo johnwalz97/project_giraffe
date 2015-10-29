@@ -38,15 +38,29 @@ $this->load->view('partials/foot');
                     }
                     ?>
                 </select></p>
+                <input id="pic" type="hidden" name="picture_link" value="">
                 <a onclick="$('#edit, #overlay').slideUp()" id="cancel" class="btn btn-warning">Cancel</a>
                 <input type="submit" formaction="/admins/preview/<?=$product['id']?>" id="preview" class="btn btn-success" value="Preview">
                 <input type="submit" value="Update" class="btn btn-primary">
             </form>
         </div>
         <div style="margin-left: 20px">
-            <h4>Change Picture</h4>
-            <input type="file" name="picture">
+            <p><a id="picture" onclick="$('#pictures, #overlay1').slideDown()">Choose Picture</a></p>
         </div>
     </div>
 </div>
 <div id='overlay' style="display: none" onclick="$('#edit, #overlay').slideUp()"></div>
+<div id="pictures" style="display: none">
+    <?php
+    for($i=1; $i<=29; $i++){ ?>
+        <img class="picture" src="/assets/pics/img (<?=$i?>).jpg" id="<?=$i?>" width="100px" height="100px;">
+    <?php } ?>
+</div>
+<div id='overlay1' style="display: none" onclick="$('#pictures, #overlay1').slideUp();"><h3 class="fixed_title">Choose a picture</h3></div>
+<script>
+    $('.picture').click(function(){
+        var value = $(this).attr('id');
+        $('#pic').attr('value', value);
+        $('#pictures, #overlay1').slideUp();
+    })
+</script>

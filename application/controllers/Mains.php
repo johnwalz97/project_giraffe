@@ -17,7 +17,7 @@ class Mains extends CI_Controller {
 	public function productsInCategory($id){
 		$category = $this->main->getOneCategory($id);
 		$products = $this->main->getProductsInCategory($id);
-		$this->load->view('storefront_categorized', $products, $category);
+		$this->load->view('storefront_categorized', ['products' => $products, 'category' => $category]);
 	}
 
 	public function view_cart(){

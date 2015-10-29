@@ -10,10 +10,9 @@ class Admin extends CI_Model {
 		$query = "SELECT * FROM orders";
 		return ($this->db->query($query)->result_array());
 	}
-	public function create_product($description, $name, $price, $category){
-		$last_link = $this->db->query('SELECT picture_link FROM products ORDER BY picture_link DESC LIMIT 1')->row_array();
+	public function create_product($description, $name, $price, $category, $pic){
 		$query = "INSERT INTO products (description, name, price, created_at, updated_at, views, qty_ordered, picture_link, category) VALUES (?, ?, ?, NOW(), NOW(), 0, 0, ?, ?)";
-		$values = [$description, $name, $price, $last_link['picture_link']+1, $category];
+		$values = [$description, $name, $price, $pic, $category];
 		$this->db->query($query, $values);
 		return($this->db->insert_id());
 	}
@@ -21,9 +20,9 @@ class Admin extends CI_Model {
 		$query = "SELECT products.name, products.id, products.description, products.price, products.picture_link, categories.name as category_name FROM products LEFT JOIN categories ON products.category = categories.id WHERE products.id = ?";
 		return ($this->db->query($query, $id)->row_array());
 	}
-	public function update_product($description, $name, $price, $id, $category){
-		$query = "UPDATE products SET description=?, name=?, price=?, category=?, updated_at=NOW() WHERE id=?";
-		$values = [$description, $name, $price, $category, $id];
+	public function update_product($description, $name, $price, $id, $category, $pic){
+		$query = "UPDATE products SET description=?, name=?, price=?, category=?, picture_link=?, updated_at=NOW() WHERE id=?";
+		$values = [$description, $name, $price, $category, $pic, $id];
 		$this->db->query($query, $values);
 	}
 	public function delete($id){
