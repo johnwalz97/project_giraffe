@@ -8,7 +8,7 @@
 <body>
 	<div class="row">
   		<div class="col-md-4 col-md-offset-1">
-			<p><a href="/">&#10094;&#10094;&#10094; Go Back</a></p>
+			<p><a href="/mains">&#10094;&#10094;&#10094; Go Back</a></p>
 		</div>
 	</div>	
 	<div class="row">
@@ -19,7 +19,7 @@
 	<div class="row">
 		<div class="col-md-2 col-md-offset-1">	
 			<!-- BIG IMAGE -->
-		    <img width="200px" height="200px" src="/assets/pics/img (<?= $oneProduct['id'] ?>).jpg">
+		    <img width="200px" height="200px" src="/assets/pics/img (<?= $oneProduct['picture_link'] ?>).jpg">
 		</div>
 		<!-- DESCRIPTION -->
 		<div class="col-md-4">
@@ -40,9 +40,10 @@
 
 <!-- BOTTOM THUMBNAIL SLIDER - SIMILAR ITEMS (SORT BY CATEGORY, LIMIT BY 6)-->
 	<h3>Similar Items</h3>
-	<?php foreach($products as $products){ ?>
-    <?= $product['name'] ?>
-    <a href="/mains/oneProduct/<?= $product['id']?>"><img width="150px" height="150px" src="/assets/pics/img (<?=$product['id']?>).jpg"></a> 
+
+	<?php 
+	foreach($products as $product){ ?>
+    <a href="/mains/oneProduct/<?= $product['id']?>"><img width="150px" height="150px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg"></a> 
     <?php } ?>
 	
 </body>

@@ -30,9 +30,9 @@ class Main extends CI_Model {
 		return $products;
 	}
 
-	public function getProductsInCategoryLimit($id){
-		$query = "SELECT * FROM products JOIN categorization ON product_id = products.id JOIN categorization ON categories where categores.id = category_id WHERE categories.id = ? LIMIT 6";
-		$values = array($id);
+	public function getProductsInCategoryLimit($category, $id){
+		$query = "SELECT id, picture_link FROM products WHERE category = ? AND id != ? LIMIT 6";
+		$values = [$category, $id];
 		$products = $this->db->query($query, $values)->result_array();
 		return $products;
 	}

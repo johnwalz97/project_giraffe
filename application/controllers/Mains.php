@@ -10,12 +10,8 @@ class Mains extends CI_Controller {
 
 	public function oneProduct($id){
 		$oneProduct = $this->main->getOneProduct($id);
-		$this->load->view('single_product', array('oneProduct' => $oneProduct));
-
-		//USE CODE BELOW INSTEAD OF ABOVE CODE WHEN CATEGORIES SET UP IN DATABASE
-
-		// $products = $this->main->getProductsInCategoryLimit($id);
-		// $this->load->view('single_product', array('one_product' => $oneProduct, 'products' => $products));
+		$products = $this->main->getProductsInCategoryLimit($oneProduct['category'], $id);
+		$this->load->view('single_product', array('oneProduct' => $oneProduct, 'products' => $products));
 	}
 
 	public function productsInCategory($id){
