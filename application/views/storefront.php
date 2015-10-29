@@ -31,16 +31,16 @@ img:hover{
     width: 100%; 
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    padding: 100px 0;
+    padding: 100px 10px;
 }
 #home { 
     background: url(/assets/pics/motorcycle04.jpg) 50% 0 fixed; 
-    height: auto;  
+    height: 900px;  
     margin: 0 auto; 
     width: 100%; 
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    padding: 200px 0;
+    padding: 200px 10px;
 }
 #footer { 
     background: url(/assets/pics/helmet01.jpg) 50% 0 fixed; 
@@ -120,6 +120,13 @@ $(document).ready(function(){
   <!-- Section 1 -->
   <section id="intro" data-speed="6" data-type="background">
     <div class="row">
+      <div class="quote col-md-8 col-md-offset-2">
+          <p><i class="fa fa-quote-left fa-3x"></i> A biker was riding down the street and on the back of his shirt it said, "If you can read this than my mrs has fallen off!" <i class="fa fa-quote-right fa-3x"></i></p>
+      </div>
+    </div>
+  </section>
+  <!-- Section 2 -->
+  <section id="home" data-speed="4" data-type="background">
       <div class="container col-md-2">
            <div class="btn-group-vertical">
               <h5><b>View by Category:</b></h5>
@@ -130,20 +137,14 @@ $(document).ready(function(){
               <a href="/mains/productsInCategory" class="btn btn-primary" role="button">Cruiser</a>
            </div>  
       </div>
-      <div class="quote col-md-9">
-          <p><i class="fa fa-quote-left fa-3x"></i> A biker was riding down the street and on the back of his shirt it said, "If you can read this than my mrs has fallen off!" <i class="fa fa-quote-right fa-3x"></i></p>
-      </div>
-    </div>
-  </section>
-  <!-- Section 2 -->
-  <section id="home" data-speed="4" data-type="background">
-            <h2>All Products</h2> 
-            <?php foreach($products as $product){ ?>
-              <figure>
-                <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption><?= $product['name'] ?></figcaption>
-              </figure>
-            <?php } ?>
-      
+      <div class="col-md-10">
+        <h2>All Products</h2> 
+        <?php foreach($products as $product){ ?>
+          <figure>
+            <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption><?= $product['name'] ?></figcaption>
+          </figure>
+        <?php } ?>
+      </div>      
   </section>
   <!-- Section 3 -->
   <section id="footer" data-speed="2" data-type="background">

@@ -4,6 +4,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Single Product View</title>
+	<style>
+		.image{
+			border: 3px solid #fff;
+			-webkit-transition: -webkit-transform .15s linear;
+			-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+			-moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+		}
+		  
+		  
+		.image:hover{
+			border: 3px solid #fff;
+			opacity: .7;
+			-webkit-transform: scale(1.25);
+			-moz-transform: scale(1.25);
+			position: relative;
+			z-index: 5;
+		}
+	</style>
 </head>
 <body>
 <div class="container">
@@ -31,7 +49,7 @@
 	
 		<?php 
 		foreach($products as $product){ ?>
-		<a href="/mains/oneProduct/<?= $product['id']?>"><img width="150px" height="150px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg"></a> 
+		<a href="/mains/oneProduct/<?= $product['id']?>"><img class="image" width="150px" height="150px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg"></a> 
 		<?php } ?>
 	</div>
 </div>

@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <nav class="navbar navbar-carbon" style="border-bottom: solid thin black;">
     <div class="container">
         <div class="navbar-header">
-            <a class="active navbar-brand" href="/">AJ Conceptz</a>
+            <a class="active navbar-brand" href="/" style="color: #c0392b; font-weight: bold;">AJ Conceptz</a>
         </div>
 		<ul class="nav navbar-nav">
 			<li><a href="/mains/">Store</a></li>
