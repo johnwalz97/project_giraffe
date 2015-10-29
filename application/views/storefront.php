@@ -106,7 +106,7 @@ $(document).ready(function(){
            </div>  
       </div>
       <div class="quote col-md-9">
-          <p><i class="fa fa-quote-left fa-3x"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad<i class="fa fa-quote-right fa-3x"></i></p>
+          <p><i class="fa fa-quote-left fa-3x"></i> A biker was riding down the street and on the back of his shirt it said, "If you can read this than my mrs has fallen off!" <i class="fa fa-quote-right fa-3x"></i></p>
       </div>
     </div>
   </section>
