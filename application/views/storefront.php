@@ -26,7 +26,7 @@ img:hover{
 }
 
 #intro { 
-    background: url(assets/pics/helmet01.jpg) 50% 0 fixed; 
+    background: url(/assets/pics/helmet01.jpg) 50% 0 fixed; 
     height: auto;  
     margin: 0 auto; 
     width: 100%; 
@@ -35,7 +35,7 @@ img:hover{
     padding: 100px 0;
 }
 #home { 
-    background: url(assets/pics/motorcycle04.jpg) 50% 0 fixed; 
+    background: url(/assets/pics/motorcycle04.jpg) 50% 0 fixed; 
     height: auto;  
     margin: 0 auto; 
     width: 100%; 
@@ -44,7 +44,7 @@ img:hover{
     padding: 200px 0;
 }
 #about { 
-    background: url(assets/pics/helmet01.jpg) 50% 0 fixed; 
+    background: url(/assets/pics/helmet01.jpg) 50% 0 fixed; 
     height: auto;
     margin: 0 auto; 
     width: 100%; 
@@ -62,6 +62,9 @@ img:hover{
 .quote {
   background: black;
   opacity: 0.7;
+}
+figure {
+  display: inline-block;
 }
 </style>
 <script type="text/javascript">
@@ -112,8 +115,10 @@ $(document).ready(function(){
   
             <h2>All Products</h2> 
             <?php foreach($products as $product){ ?>
-              <?= $product['name'] ?>
-              <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['id']?>).jpg" data-toggle="tooltip" title="View"></a>
+              <figure>
+                <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['id']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption><?= $product['name'] ?></figcaption>
+              </figure>
+              
             <?php } ?>
       
   </section>
