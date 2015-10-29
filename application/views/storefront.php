@@ -1,6 +1,5 @@
 <?php $this->load->view('partials/customers', ['title' => 'Store']) ?>
-<style>
-  
+<style> 
 body {
     /*background-image: url("assets/pics/motorcycle04.jpg");*/
     background-color: black;
@@ -43,7 +42,7 @@ img:hover{
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
     padding: 200px 0;
 }
-#about { 
+#footer { 
     background: url(/assets/pics/helmet01.jpg) 50% 0 fixed; 
     height: auto;
     margin: 0 auto; 
@@ -51,8 +50,34 @@ img:hover{
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
     padding: 100px 0;
-    color: #fff;
+
 }
+
+.foot p{
+    color: #337ab7;
+    width: auto;
+    font-size: 1.5em;
+    background: black 0.5;
+}
+
+.foot:hover{
+    color: #337ab7;
+    width: auto;
+    background: white;
+    -webkit-transform: translate(360deg);
+    transform: translate(360deg);
+}
+
+.foot {
+  width: auto;
+  background: black;
+  padding: 5px;
+  opacity: 0.7;
+  text-align: center;
+  -webkit-transition: width 3s, height 3s, background-color 3s, -webkit-transform 3s;
+  transition: width 3s, height 3s, background-color 3s, transform 3s;
+}
+
 .quote p {
   font-size: 2em;
   width: auto;
@@ -71,26 +96,26 @@ figure {
 $(document).ready(function(){
    // cache the window object
    $window = $(window);
- 
    $('section[data-type="background"]').each(function(){
      // declare the variable to affect the defined data-type
-     var $scroll = $(this);
-                     
+     var $scroll = $(this);      
       $(window).scroll(function() {
         // HTML5 proves useful for helping with creating JS functions!
         // also, negative value because we're scrolling upwards                             
         var yPos = -($window.scrollTop() / $scroll.data('speed')); 
-         
         // background position
         var coords = '50% '+ yPos + 'px';
- 
         // move the background
         $scroll.css({ backgroundPosition: coords });    
       }); // end window scroll
    });  // end section function
 }); // close out script
 </script>
+<script type="text/javascript">
+  TweenMax.to(".foot", 2, {left:600});
 
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script> <!-- gsap -->
 <body>
   <!-- Section 1 -->
   <section id="intro" data-speed="6" data-type="background">
@@ -112,7 +137,6 @@ $(document).ready(function(){
   </section>
   <!-- Section 2 -->
   <section id="home" data-speed="4" data-type="background">
-  
             <h2>All Products</h2> 
             <?php foreach($products as $product){ ?>
               <figure>
@@ -122,9 +146,15 @@ $(document).ready(function(){
       
   </section>
   <!-- Section 3 -->
-  <section id="about" data-speed="2" data-type="background">
+  <section id="footer" data-speed="2" data-type="background">
       <div class="container">
-          
+          <footer class="foot">
+            <p>Contact Information:</p>
+            <p>Email: <a href="mailto:someone@example.com">info@ajconceptz.com</a>.</p>
+            <p>Phone: 206-206-2062</p>
+            <p>Address: 12345 Main St., Bellevue, WA 54321</p>
+            <p>Designed by AJ Conceptz &copy; 2015. All rights reserved.</p>
+          </footer> 
       </div>
   </section>
 
