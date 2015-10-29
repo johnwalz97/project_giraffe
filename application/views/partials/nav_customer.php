@@ -4,8 +4,8 @@
             <a href="/welcome/" class="navbar-brand" style="color: #c0392b; font-weight: bold;">AJ Conceptz</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="li_bar"><a class="list_link" href="/mains/">Shop as a guest</a></li>
-			<li class="li_bar"><a class="list_link" href="/welcome/contact">Contact Us</a></li>
+            <li class="li_bar"><a href="/mains/">Shop as a guest</a></li>
+			<li class="li_bar"><a href="/welcome/contact">Contact Us</a></li>
         </ul>
         <ul class="nav navbar-nav pull-right">
             <li><a href="/admins/">Admin Portal</a></li>

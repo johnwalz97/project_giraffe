@@ -26,7 +26,7 @@ img:hover{
 }
 
 #intro { 
-    background: url(/assets/pics/helmet01.jpg) 50% 0 fixed; 
+    background: url(/assets/biker.jpg) 50% 0 fixed; 
     height: auto;  
     margin: 0 auto; 
     width: 100%; 
