@@ -1,4 +1,4 @@
-<?php $this->load->view('partials/customers') ?>
+<?php $this->load->view('partials/customers', ['title', 'Store']) ?>
 <body>
   <h2><?= $category['name'] ?></h2>
 
