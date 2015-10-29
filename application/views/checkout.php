@@ -1,5 +1,5 @@
 <?php
-$this->load->view('customers', ['title' => 'Checkout']);
+$this->load->view('partials/customers', ['title' => 'Checkout']);
 ?>
 <!-- //////////////////////////////////////////////////////////////////////////// -->
 <!-- SHIPPING INFO BEGIN -->

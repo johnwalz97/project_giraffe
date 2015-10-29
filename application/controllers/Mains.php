@@ -23,5 +23,9 @@ class Mains extends CI_Controller {
 	public function view_cart(){
 		$this->load->view('cart');
 	}
+	
+	public function checkout(){
+		$this->load->view('checkout');
+	}
 
 }
