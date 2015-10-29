@@ -63,6 +63,9 @@ img:hover{
   background: black;
   opacity: 0.7;
 }
+figure {
+  display: inline-block;
+}
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -112,8 +115,9 @@ $(document).ready(function(){
   
             <h2>All Products</h2> 
             <?php foreach($products as $product){ ?>
-              <?= $product['name'] ?>
-              <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg" data-toggle="tooltip" title="View"></a>
+              <figure>
+                <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['id']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption><?= $product['name'] ?></figcaption>
+              </figure>
             <?php } ?>
       
   </section>
