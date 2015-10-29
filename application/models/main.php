@@ -39,7 +39,7 @@ class Main extends CI_Model {
 		return $this->db->insert_id();
 	}
 	public function create_bill_address($first_name, $last_name, $street, $city, $state, $zip, $card_number, $name, $cvc, $expiration){
-		$query = "INSERT INTO bill_addresses (first_name, last_name, street, city, state, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$query = "INSERT INTO bill_addresses (first_name, last_name, street, city, state, zip, card_number, name, cvc, expiration) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		$values =  array($first_name, $last_name, $street, $city, $state, $zip, $card_number, $name, $cvc, $expiration);
 		$this->db->query($query, $values);
 		return $this->db->insert_id();
@@ -49,9 +49,10 @@ class Main extends CI_Model {
 		$values = [$bill, $ship];
 		$this->db->query($query, $values);
 		$order_id = $this->db->insert_id();
-		foreach ($products as $product){
+		foreach ($products as $product => $quantity){
 			$query = "INSERT INTO products_ordered (product_id, order_id, product_quantity) VALUES (?, ?, ?)";
-			$values = [$product[], $order_id, $product[]];
+			$values = [$product, $order_id ,$quantity];
+			$this->db->query($query, $values);
 		}
 	}
 }

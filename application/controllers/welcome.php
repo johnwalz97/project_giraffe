@@ -45,4 +45,12 @@ class Welcome extends CI_Controller {
 			$this->signin_page();
 		}
 	}
+	
+	public function contact(){
+		$this->load->view('contact');
+	}
+	
+	public function contact_submit(){
+		redirect("/mains/");
+	}
 }

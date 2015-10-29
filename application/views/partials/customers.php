@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 		<ul class="nav navbar-nav">
 			<li><a href="/mains/">All Products</a></li>
+			<li class="li_bar"><a href="/welcome/contact">Contact Us</a></li>
 		</ul>
         <ul class="nav navbar-nav pull-right">
             <li class="pull-right"><a href="/shopping">Shopping Cart <i class="fa fa-shopping-cart fa-lg"></i></a></li>

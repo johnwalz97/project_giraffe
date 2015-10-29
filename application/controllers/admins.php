@@ -111,4 +111,13 @@ class Admins extends CI_Controller {
 		$product = $this->admin->get_product_by_id($id);
 		$this->load->view('preview', ['product' => $product]);
 	}
+	public function status($id){
+		$this->admin->update_status($id, $this->input->post('status'));
+		redirect("/admins/");
+	}
+	public function view_order($id){
+		$order = $this->admin->get_order_by_id($id);
+		$products = $this->admin->get_ordered_products($id);
+		$this->load->view('view_order', ['products' => $products, 'order' => $order]);
+	}
 }

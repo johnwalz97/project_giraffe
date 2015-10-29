@@ -31,16 +31,15 @@ img:hover{
     width: 100%; 
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    padding: 100px 10px;
+    padding: 50px 10px;
 }
 #home { 
     background: url(/assets/pics/motorcycle04.jpg) 50% 0 fixed; 
-    height: 900px;  
     margin: 0 auto; 
     width: 100%; 
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    padding: 200px 10px;
+    padding: 50px 10px;
 }
 #footer { 
     background: url(/assets/pics/helmet01.jpg) 50% 0 fixed; 
@@ -127,24 +126,26 @@ $(document).ready(function(){
   </section>
   <!-- Section 2 -->
   <section id="home" data-speed="4" data-type="background">
-      <div class="container col-md-2">
-           <div class="btn-group-vertical">
-              <h5><b>View by Category:</b></h5>
-              <a href="/mains/productsInCategory/1" class="btn btn-primary" role="button">Sport</a>
-              <a href="/mains/productsInCategory/2" class="btn btn-primary" role="button">Dirt Bike</a>
-              <a href="/mains/productsInCategory/3" class="btn btn-primary" role="button">Cross Country</a>
-              <a href="/mains/productsInCategory/4" class="btn btn-primary" role="button">Electric</a>
-              <a href="/mains/productsInCategory/5" class="btn btn-primary" role="button">Cruiser</a>
-           </div>  
-      </div>
-      <div class="col-md-10">
-        <h2>All Products</h2> 
-        <?php foreach($products as $product){ ?>
-          <figure>
-            <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption><?= $product['name'] ?></figcaption>
-          </figure>
-        <?php } ?>
-      </div>      
+    <div class="row">
+        <div class="container col-md-2">
+             <div class="btn-group-vertical">
+                <h5><b>View by Category:</b></h5>
+                <a href="/mains/productsInCategory/1" class="btn btn-primary" role="button">Sport</a>
+                <a href="/mains/productsInCategory/2" class="btn btn-primary" role="button">Dirt Bike</a>
+                <a href="/mains/productsInCategory/3" class="btn btn-primary" role="button">Cross Country</a>
+                <a href="/mains/productsInCategory/4" class="btn btn-primary" role="button">Electric</a>
+                <a href="/mains/productsInCategory/5" class="btn btn-primary" role="button">Cruiser</a>
+             </div>  
+        </div>
+        <div class="col-md-10">
+          <h1>All Products</h1> 
+          <?php foreach($products as $product){ ?>
+            <figure>
+              <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption><?= $product['name'] ?></figcaption>
+            </figure>
+          <?php } ?>
+        </div>
+    </div>
   </section>
   <!-- Section 3 -->
   <section id="footer" data-speed="2" data-type="background">
