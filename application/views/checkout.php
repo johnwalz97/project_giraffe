@@ -5,7 +5,7 @@ $this->load->view('partials/customers', ['title' => 'Checkout']);
 <!-- SHIPPING INFO BEGIN -->
 <div class="container">
   	<h2>Shipping Information</h2>
-  	<form action="" methop="post" class="form-horizontal" role="form">
+  	<form action="/mains/" method="post" class="form-horizontal" role="form">
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">First Name:</label>
 	      	<div class="col-sm-3">
@@ -42,13 +42,9 @@ $this->load->view('partials/customers', ['title' => 'Checkout']);
 	        	<input type="text" class="form-control" id="zipcode"  name="zipcode" maxlength="5" placeholder="Zipcode...">
 	      	</div>
 	    </div>
-	</form>
-</div>
 <!-- //////////////////////////////////////////////////////////////////////////// -->
 <!-- BILLING INFO BEGIN -->
-<div class="container">
   	<h2>Billing Information</h2>
-  	<form action="" methop="post" class="form-horizontal" role="form">
 		<div class="form-group"> 
 		    <div class="col-sm-offset-2 col-sm-10">
 		      	<div class="checkbox">

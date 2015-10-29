@@ -1,4 +1,4 @@
-<?php $this->load->view('partials/customers') ?>
+<?php $this->load->view('partials/customers', ['title' => 'View Product']) ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
