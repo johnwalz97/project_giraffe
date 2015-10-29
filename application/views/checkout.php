@@ -40,7 +40,7 @@ var_dump($this->cart->contents());
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">Zipcode:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="zipcode"  name="zipcode" maxlength="5" placeholder="Zipcode...">
+	        	<input type="text" class="form-control" id="zipcode"  name="zip" maxlength="5" placeholder="Zipcode...">
 	      	</div>
 	    </div>
 <!-- //////////////////////////////////////////////////////////////////////////// -->
@@ -56,43 +56,49 @@ var_dump($this->cart->contents());
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">First Name:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name...">
+	        	<input type="text" class="form-control" id="first_name" name="bill_first_name" placeholder="First name...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">Last Name:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name...">
+	        	<input type="text" class="form-control" id="last_name" name="bill_last_name" placeholder="Last name...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">Street Address:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="street" name="street" placeholder="Address...">
+	        	<input type="text" class="form-control" id="street" name="bill_street" placeholder="Address...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">City:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="city" name="city" placeholder="City...">
+	        	<input type="text" class="form-control" id="city" name="bill_city" placeholder="City...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">State:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="state" name="state" maxlength="2" placeholder="State...">
+	        	<input type="text" class="form-control" id="state" name="bill_state" maxlength="2" placeholder="State...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">Zipcode:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="zipcode" name="zipcode" maxlength="5" placeholder="Zipcode...">
+	        	<input type="text" class="form-control" id="zipcode" name="bill_zip" maxlength="5" placeholder="Zipcode...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2"><i class="fa fa-credit-card"></i> Card#:</label>
 	      	<div class="col-sm-3">
 	        	<input type="text" class="form-control" id="card_number" name="card_number" placeholder="Card#...">
+	      	</div>
+	    </div>
+	    <div class="form-group">
+	      	<label class="control-label col-sm-2">Name:</label>
+	      	<div class="col-sm-3">
+	        	<input type="text" class="form-control" id="name" name="name" placeholder="Name On Card...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
