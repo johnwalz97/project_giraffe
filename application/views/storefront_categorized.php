@@ -151,7 +151,7 @@ $(document).ready(function(){
         <h2>All <?=ucwords($category['name'])?> Bikes</h2> 
         <?php foreach($products as $product){ ?>
           <figure>
-            <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption><?= $product['name'] ?></figcaption>
+            <a href="/mains/oneProduct/<?= $product['id']?>"><img width="200px" height="200px" src="/assets/pics/img (<?=$product['picture_link']?>).jpg" data-toggle="tooltip" title="View"></a><figcaption style="text-align:center"><?= $product['name'] ?></figcaption>
           </figure>
         <?php } ?>
       </div>      
