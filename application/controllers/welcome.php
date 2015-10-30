@@ -35,7 +35,7 @@ class Welcome extends CI_Controller {
 	
 	public function signin(){
 		$password = md5($this->input->post('password'));
-		$login = $this->user->login_user($this->input->post('email'), $password);
+		$login = $this->main->login_user($this->input->post('email'), $password);
 		if (!empty($login)){
 			$this->session->set_userdata('user', $login);
 			redirect("/mains/");

@@ -2,7 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Model {
-
+	public function login_user($email, $password){
+		$query = "SELECT * FROM users WHERE email = ? AND password = ?";
+		$values = [$email,  $password];
+		$this->db->query($query, $values)->row_array();
+	}
 	public function getAllProducts(){
 		$query = "SELECT * FROM products";
 		$products = $this->db->query($query)->result_array();
