@@ -105,6 +105,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <?php
+if(!empty($this->session->userdata('user'))){
+	$guest = '';
+	$login = false;
+}
+else {
+	$guest = ' as a Guest';
+	$login = true;
+}
 $this->load->view('partials/nav_customer');
 $this->load->view('partials/foot');
 ?>
@@ -114,6 +122,10 @@ $this->load->view('partials/foot');
 <h3 class="container_main2">Where beautiful design meets incredible performace!</h3>
 
 <div class="btn-matte">
-	<div class="btn-carbon" style="margin-right: 100px"><a href="/welcome/signin_page">Log In</a></div>
-	<div class="btn-carbon"><a href="/welcome/register_page">Register</a></div>
+	<?php if($login) { ?>
+		<div class="btn-carbon" style="margin-right: 100px"><a href="/welcome/signin_page">Log In</a></div>
+		<div class="btn-carbon"><a href="/welcome/register_page">Register</a></div>
+	<?php } else { ?>
+		<div class="btn-carbon single"><a href="/mains/">Start Shopping!</a></div>
+	<?php } ?>
 </div>
