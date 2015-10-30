@@ -25,7 +25,7 @@ img:hover{
 }
 
 #intro { 
-    background: url(/assets/biker.jpg) 50% 0 fixed;
+    background: url(/assets/pics/motorcycle07.jpg) 50% 0 fixed;
     -webkit-filter: brightness(300%);
     height: auto;  
     margin: 0 auto; 
