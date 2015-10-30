@@ -25,13 +25,14 @@ img:hover{
 }
 
 #intro { 
-    background: url(/assets/biker.jpg) 50% 0 fixed; 
+    background: url(/assets/biker.jpg) 50% 0 fixed;
+    -webkit-filter: brightness(300%);
     height: auto;  
     margin: 0 auto; 
     width: 100%; 
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    padding: 100px 10px;
+    padding: 50px 10px;
 }
 #home { 
     background: url(/assets/pics/motorcycle04.jpg) 50% 0 fixed; 
@@ -74,19 +75,28 @@ img:hover{
   padding: 5px;
   opacity: 0.7;
   text-align: center;
-  -webkit-transition: width 3s, height 3s, background-color 3s, -webkit-transform 3s;
-  transition: width 3s, height 3s, background-color 3s, transform 3s;
+  -webkit-transition: background-color 2s, -webkit-transform 2s;
+  transition: background-color 2s, transform 2s;
+}
+
+.quote:hover{
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
 }
 
 .quote p {
   font-size: 2em;
   width: auto;
   background: black 0.5;
+  color:#fff;
 }
 
 .quote {
   background: black;
   opacity: 0.7;
+
+  -webkit-transition: width .2s, height .2s, background-color .2s, -webkit-transform .2s;
+  transition: width .2s, height .2s, background-color .2s, transform .2s;
 }
 figure {
   display: inline-block;
