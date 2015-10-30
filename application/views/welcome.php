@@ -101,6 +101,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			color: #c0392b;
 			font-weight: bold;
 		}
+		.btn-carbon-single {
+			float: left;
+			cursor: pointer;
+			background:
+			  linear-gradient(27deg, #151515  5px, transparent 5px) 0 5px,
+			  linear-gradient(207deg, #151515  5px, transparent 5px) 10px 0px,
+			  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+			  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+			  linear-gradient(90deg, #1b1b1b  10px, transparent 10px),
+			  linear-gradient(#1d1d1d  25%, #1a1a1a  25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424  75%, #242424 );
+			background-color: #131313 ;
+			background-size: 20px 20px;
+			width: 300px;
+			height: 40px;
+			margin: 0px;
+			color: #c0392b;
+			padding-left: 24px;
+			padding-top: 10px;
+		}
+		.btn-carbon-single:hover {
+			background: #c0392b;
+		}
+		.btn-carbon-single:hover > a {
+			color: white;
+			text-decoration: none;
+		}
+		.btn-carbon-single a {
+			color: #c0392b;
+			font-weight: bold;
+		}
     </style>
 </head>
 <body>
@@ -126,6 +156,6 @@ $this->load->view('partials/foot');
 		<div class="btn-carbon" style="margin-right: 100px"><a href="/welcome/signin_page">Log In</a></div>
 		<div class="btn-carbon"><a href="/welcome/register_page">Register</a></div>
 	<?php } else { ?>
-		<div class="btn-carbon single"><a href="/mains/">Start Shopping!</a></div>
+		<div class="btn-carbon-single"><a href="/mains/">Start Shopping!</a></div>
 	<?php } ?>
 </div>
