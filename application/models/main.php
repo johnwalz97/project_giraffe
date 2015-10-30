@@ -53,6 +53,7 @@ class Main extends CI_Model {
 			$query = "INSERT INTO products_ordered (product_id, order_id, product_quantity) VALUES (?, ?, ?)";
 			$values = [$product, $order_id ,$quantity];
 			$this->db->query($query, $values);
+			$this->db->query('UPDATE products SET qty_ordered=qty_ordered+? WHERE id = ?', array($quantity, $product));
 		}
 	}
 }

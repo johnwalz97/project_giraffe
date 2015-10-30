@@ -8,7 +8,8 @@
 			<li><a class="list_link" href="/admins/products">Products</a></li>
         </ul>
         <ul class="nav navbar-nav pull-right">
-            <li class="pull-right"><a class="list_link" href="/admins/logoff">Log Off</a></li>
+			<li><a class="list_link" href="/">Customer Portal</a></li>
+            <li><a class="list_link" href="/admins/logoff">Log Off</a></li>
         </ul>
     </div>
 </nav>

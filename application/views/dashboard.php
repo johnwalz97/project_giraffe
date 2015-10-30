@@ -31,8 +31,13 @@ $this->load->view('partials/foot');
                 <td><?=$order['street']?> <?=$order['city']?>, <?=$order['state']?> <?=$order['zip']?></td>
                 <td>$<?=$total?></td>
                 <td>
-                    <form id="form" action="/admins/status/<?=$order['id']?>" method="post">
-                        <select id="status" name="status">
+                    <script>
+                        $(document).ready(function(){
+                            $('#status<?=$order['id']?>').val('<?=$order['status']?>');
+                        })
+                    </script>
+                    <form action="/admins/status/<?=$order['id']?>" method="post">
+                        <select id="status<?=$order['id']?>" name="status">
                             <option id="1" value="1">Order in Process</option>
                             <option id="2" value="2">Shipped</option>
                             <option id="3" value="3">Cancelled</option>
@@ -44,8 +49,7 @@ $this->load->view('partials/foot');
     </table>
 </div>
 <script>
-    $('#status').val('<?=$order['status']?>');
-    $('#status').change(function(){
-        $('#form').submit();
+    $('select').change(function(){
+        $(this).closest('form').submit();
     })
 </script>

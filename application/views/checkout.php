@@ -1,6 +1,5 @@
 <?php
 $this->load->view('partials/customers', ['title' => 'Checkout']);
-var_dump($this->cart->contents());
 ?>
 <!-- //////////////////////////////////////////////////////////////////////////// -->
 <!-- SHIPPING INFO BEGIN -->
@@ -49,44 +48,44 @@ var_dump($this->cart->contents());
 		<div class="form-group"> 
 		    <div class="col-sm-offset-2 col-sm-10">
 		      	<div class="checkbox">
-		        	<label><input type="checkbox" name="same_shipping"> Same as Shipping</label>
+		        	<label><input type="checkbox" id="same" name="same_shipping"> Same as Shipping</label>
 		      	</div>
 		    </div>
 		</div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">First Name:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="first_name" name="bill_first_name" placeholder="First name...">
+	        	<input type="text" class="form-control" id="bill_first_name" name="bill_first_name" placeholder="First name...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">Last Name:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="last_name" name="bill_last_name" placeholder="Last name...">
+	        	<input type="text" class="form-control" id="bill_last_name" name="bill_last_name" placeholder="Last name...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">Street Address:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="street" name="bill_street" placeholder="Address...">
+	        	<input type="text" class="form-control" id="bill_street" name="bill_street" placeholder="Address...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">City:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="city" name="bill_city" placeholder="City...">
+	        	<input type="text" class="form-control" id="bill_city" name="bill_city" placeholder="City...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">State:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="state" name="bill_state" maxlength="2" placeholder="State...">
+	        	<input type="text" class="form-control" id="bill_state" name="bill_state" maxlength="2" placeholder="State...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
 	      	<label class="control-label col-sm-2">Zipcode:</label>
 	      	<div class="col-sm-3">
-	        	<input type="text" class="form-control" id="zipcode" name="bill_zip" maxlength="5" placeholder="Zipcode...">
+	        	<input type="text" class="form-control" id="bill_zipcode" name="bill_zip" maxlength="5" placeholder="Zipcode...">
 	      	</div>
 	    </div>
 	    <div class="form-group">
@@ -121,3 +120,23 @@ var_dump($this->cart->contents());
 	    </div>	    
 	</form>
 </div>
+<script>
+	$('#same').change(function(){
+		if (this.checked) {
+			$('#bill_first_name').val($('#first_name').val());
+			$('#bill_last_name').val($('#last_name').val());
+			$('#bill_street').val($('#street').val());
+			$('#bill_city').val($('#city').val());
+			$('#bill_state').val($('#state').val());
+			$('#bill_zipcode').val($('#zipcode').val());
+		}
+		else {
+			$('#bill_first_name').val("");
+			$('#bill_last_name').val("");
+			$('#bill_street').val("");
+			$('#bill_city').val("");
+			$('#bill_state').val("");
+			$('#bill_zipcode').val("");			
+		}
+	})
+</script>
