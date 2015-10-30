@@ -1,6 +1,5 @@
 <?php
 $this->load->view('partials/customers', ['title' => 'Checkout']);
-var_dump($address);
 if(!empty($address)){
 	$first = $address['first_name'];
 	$last = $address['last_name'];
