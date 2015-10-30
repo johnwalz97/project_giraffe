@@ -37,8 +37,8 @@ class Shopping extends CI_Controller {
 		foreach ($this->cart->contents() as $item) {
 			$products[$item['id']] = $item['qty'];
 		};
-		$bill_id = $this->main->create_ship_address($this->input->post('first_name'), $this->input->post('last_name'), $this->input->post('street'), $this->input->post('city'), $this->input->post('state'), $this->input->post('zip'));
-		$ship_id = $this->main->create_bill_address($this->input->post('bill_first_name'), $this->input->post('bill_last_name'), $this->input->post('bill_street'), $this->input->post('bill_city'), $this->input->post('bill_state'), $this->input->post('bill_zip'), $this->input->post('card_number'), $this->input->post('name'), $this->input->post('cvc'), $this->input->post('expiration'));
+		$ship_id = $this->main->create_ship_address($this->input->post('first_name'), $this->input->post('last_name'), $this->input->post('street'), $this->input->post('city'), $this->input->post('state'), $this->input->post('zip'));
+		$bill_id = $this->main->create_bill_address($this->input->post('bill_first_name'), $this->input->post('bill_last_name'), $this->input->post('bill_street'), $this->input->post('bill_city'), $this->input->post('bill_state'), $this->input->post('bill_zip'), $this->input->post('card_number'), $this->input->post('name'), $this->input->post('cvc'), $this->input->post('expiration'));
 		$this->main->place_order($bill_id, $ship_id, $products);
 		$this->cart->destroy();
 		redirect("/mains/");

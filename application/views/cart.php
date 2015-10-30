@@ -1,9 +1,17 @@
-<?php echo form_open(base_url().'shopping/update'); ?>
+﻿<?php echo form_open(base_url().'shopping/update'); ?>
 <?php $this->load->view('partials/customers', ['title' => 'Cart']);
 if(!empty($this->session->flashdata('errors'))){
 	$display = '';
 } else {
 	$display = 'none';
+}
+if(!empty($this->session->userdata('user'))){
+	$login = 'none';
+	$guest = '';
+}
+else {
+	$login = '';
+	$guest = ' as Guest';
 }
 ?>
 <body>
@@ -48,9 +56,9 @@ if(!empty($this->session->flashdata('errors'))){
 		</form>
 		<a href="/mains/" class="btn btn-success" role="button">Continue Shopping</a>
 	</div>
-	<a href="/mains/checkout" class="btn btn-primary col-md-2 col-md-offset-1">Checkout as Guest</a>
+	<a href="/mains/checkout" class="btn btn-primary col-md-2 col-md-offset-1">Checkout<?=$guest?></a>
 </div>
-<div class="container">
+<div class="container" style="display: <?=$login?>">
 	<div id="loginbox" style="margin-top: 50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 sol-sm-offset-2">
 		<div class="panel panel-primary">
 			<div class="panel-heading">

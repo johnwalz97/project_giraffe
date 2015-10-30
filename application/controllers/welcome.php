@@ -10,10 +10,6 @@ class Welcome extends CI_Controller {
 	}
 	
 	public function signin_page(){
-		if($this->session->userdata('user')!=null){
-			$this->session->sess_destroy();
-			redirect("/");
-		}
 		$this->load->view('signin');
 	}
 	
@@ -27,7 +23,7 @@ class Welcome extends CI_Controller {
 			$this->register_page();
 		}
 		else{
-			$user = $this->user->register_user($this->input->post('email'), $this->input->post('first_name'), $this->input->post('last_name'), $this->input->post('password'));
+			$user = $this->main->register_user($this->input->post('email'), $this->input->post('first_name'), $this->input->post('last_name'), $this->input->post('password'));
 			$this->session->set_userdata('user', $user);
 			redirect("/mains/");			
 		}
