@@ -80,6 +80,7 @@ img:hover{
 }
 
 .quote:hover{
+	opacity: 1;
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
 }
