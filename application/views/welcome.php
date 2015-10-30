@@ -113,7 +113,7 @@ else {
 	$guest = ' as a Guest';
 	$login = true;
 }
-$this->load->view('partials/nav_customer');
+$this->load->view('partials/nav_customer', ['guest' => $guest]);
 $this->load->view('partials/foot');
 ?>
 <div class="background"></div>
