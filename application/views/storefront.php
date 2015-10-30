@@ -25,7 +25,8 @@ img:hover{
 }
 
 #intro { 
-    background: url(/assets/biker.jpg) 50% 0 fixed; 
+    background: url(/assets/biker.jpg) 50% 0 fixed;
+    -webkit-filter: brightness(300%);
     height: auto;  
     margin: 0 auto; 
     width: 100%; 
@@ -73,19 +74,28 @@ img:hover{
   padding: 5px;
   opacity: 0.7;
   text-align: center;
-  -webkit-transition: width 3s, height 3s, background-color 3s, -webkit-transform 3s;
-  transition: width 3s, height 3s, background-color 3s, transform 3s;
+  -webkit-transition: background-color 3s, -webkit-transform 3s;
+  transition: background-color 3s, transform 3s;
+}
+
+.quote:hover{
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
 }
 
 .quote p {
   font-size: 2em;
   width: auto;
   background: black 0.5;
+  color:#fff;
 }
 
 .quote {
   background: black;
   opacity: 0.7;
+
+  -webkit-transition: width .5s, height .5s, background-color .5s, -webkit-transform .5s;
+  transition: width .5s, height .5s, background-color .5s, transform .5s;
 }
 figure {
   display: inline-block;
