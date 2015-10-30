@@ -159,4 +159,4 @@ $this->load->view('partials/foot');
 		<div class="btn-carbon-single"><a href="/mains/">Start Shopping!</a></div>
 	<?php } ?>
 </div>
-<a style="vertical-align: baseline" href="/welcome/logout">Logout</a>
+<a style="position: absolute; color: white; bottom: 5px; right: 5px; z-index: 101" href="/welcome/logout">Logout</a>

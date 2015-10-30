@@ -49,4 +49,8 @@ class Welcome extends CI_Controller {
 	public function contact_submit(){
 		redirect("/mains/");
 	}
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect("/");
+	}
 }
