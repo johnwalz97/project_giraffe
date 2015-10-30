@@ -25,8 +25,14 @@ class Mains extends CI_Controller {
 	}
 	
 	public function checkout(){
-		$address = $this->main->get_addresses();
-		$this->load->view('checkout', ['address' => $address]);
+		if(!empty($this->session->userdata('user'))){
+			$address = $this->main->get_addresses();
+			$this->load->view('checkout', ['address' => $address]);
+		}
+		else {
+			$address = '';
+			$this->load->view('checkout', ['address' => $address]);
+		}
 	}
 
 }
