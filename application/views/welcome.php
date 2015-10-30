@@ -117,7 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			height: 40px;
 			margin: 0px;
 			color: #c0392b;
-			padding-left: 24px;
+			padding-left: 95px;
 			padding-top: 10px;
 		}
 		.btn-carbon-single:hover {
