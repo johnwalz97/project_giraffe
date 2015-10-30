@@ -37,7 +37,6 @@ img:hover{
 #home { 
     background: url(/assets/pics/motorcycle04.jpg) 50% 0 fixed; 
     margin: 0 auto;
-    height: 900px;
     width: 100%; 
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
